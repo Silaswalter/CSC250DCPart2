@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class MasterData
 {
     public static int count = 0;
@@ -5,7 +7,11 @@ public class MasterData
     public static bool isExiting = true;
     private static bool isDungeonSetup = false;
     public static Dungeon cs = null;
+    public static Monster m = null;
     public static Player p = null;
+    public static GameObject musicLooper = null;
+    public static Deathmatch d = null;
+    public static bool fightStillGoing = true;
 
     public static void setupDungeon()
     {
@@ -14,6 +20,7 @@ public class MasterData
             MasterData.cs = new Dungeon(100);
             MasterData.cs.populateCSDepartment();
 
+            
             MasterData.p = new Player("Mike");
             MasterData.cs.addPlayer(p);
             MasterData.isDungeonSetup = true;

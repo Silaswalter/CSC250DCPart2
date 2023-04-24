@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Exit
   - center
+  - Door
+  - Backing
+  - Attack Direction
   layers:
   - Default
   - TransparentFX

@@ -10,16 +10,10 @@ public class PlayerController : MonoBehaviour
     public GameObject westStart, eastStart, northStart, southStart;
     public float movementSpeed = 40.0f;
     private bool isMoving;
-       
-
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-        
-
         this.updateExits();
 
         this.rb = this.GetComponent<Rigidbody>();
@@ -79,12 +73,6 @@ public class PlayerController : MonoBehaviour
         {
             this.rb.velocity = Vector3.zero;
             this.rb.Sleep();
-            int chance = Random.Range(1, 10);
-            if(chance <= 3)
-            {
-                SceneManager.LoadScene("FightScene");
-                print("hi");
-            }
             //this.rb.angularVelocity = Vector3.zero;
         }
     }
@@ -111,21 +99,12 @@ public class PlayerController : MonoBehaviour
             }
             MasterData.isExiting = false;
             SceneManager.LoadScene("DungeonRoom");
-
-        
         }
         else if(other.gameObject.CompareTag("Exit") && !MasterData.isExiting)
         {
             MasterData.isExiting = true;
         }
-        
-        
-        
     }
-
-
-    
-
 
     // Update is called once per frame
     void Update()
